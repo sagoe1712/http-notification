@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\subscribeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::post('/subscribe/{topic}',[subscribeController::class,'topic']);
