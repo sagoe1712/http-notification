@@ -9,7 +9,7 @@ class subscribeController extends Controller
 {
     //
 
-    public function topic(Request $request, $topic)
+    public function createSubscription(Request $request, $topic)
     {
         if(!isset($topic))
         {
@@ -27,6 +27,23 @@ class subscribeController extends Controller
         }
 
         return response()->json(['url'=>$request->url, 'topic'=>$topic],200);
+
+    }
+
+    public function publish(Request $request, $topic)
+    {
+        if(!isset($topic))
+        {
+            return response()->json(['message'=>'Kindly please a topic via URL: /topic'],400);
+        }
+
+
+        if($request->all() === null)
+        {
+            return response()->json(['data'=>[], 'topic'=>$topic],200);
+        }
+
+        return response()->json(['data'=>$request->all(), 'topic'=>$topic],200);
 
     }
 }
