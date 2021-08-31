@@ -15,7 +15,7 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('subscriber_id');
+            $table->unsignedBigInteger('subscriber_id')->nullable();
             $table->foreign('subscriber_id')->references('id')->on('subscribers');
             $table->unsignedBigInteger('topic_id');
             $table->foreign('topic_id')->references('id')->on('topics');

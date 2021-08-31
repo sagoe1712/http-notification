@@ -12,14 +12,7 @@ class subscribeController extends Controller
 {
     //
 
-    private function check_topic($topic){
-
-        $count = Topic::where('topics', $topic)->count();
-
-        return $count;
-
-    }
-
+ 
     private function check_subscriber($url){
 
         $count = Subscriber::where('url', $url)->count();
@@ -27,16 +20,7 @@ class subscribeController extends Controller
         return $count;
 
     }
-
-
-    private function return_topic_id($topic){
-
-        $result = Topic::where('topics', $topic)->first();
-
-        return $result->id;
-    }
-
-
+   
     private function store_topic($name){
         $topic = new Topic;
         $topic->topics = $name;
@@ -181,20 +165,5 @@ class subscribeController extends Controller
 
     }
 
-    public function publish(Request $request, $topic)
-    {
-        if(!isset($topic))
-        {
-            return response()->json(['message'=>'Kindly please a topic via URL: /topic'],400);
-        }
-
-
-        if($request->all() === null)
-        {
-            return response()->json(['data'=>[], 'topic'=>$topic],200);
-        }
-
-        return response()->json(['data'=>$request->all(), 'topic'=>$topic],200);
-
-    }
+ 
 }
