@@ -122,7 +122,7 @@ private function store_post($subscriber_id = null, $subscriber_endpoint = null, 
        }
        else
        {
-        $publish = $this->store_post(null, null, $topic_id, $request->all());
+        $publish = $this->store_post(null, null, $topic_id, json_encode($request->all()));
 
         if($publish == true)
         {
