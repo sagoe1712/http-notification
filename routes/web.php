@@ -19,7 +19,6 @@ Route::get('/', function () {
 });
 
 
-// Route::post('/subscribe/{topic}',[subscribeController::class,'topic']);
-Route::post('/subscribe/{topic}',[subscribeController::class,'createSubscription']);
+// Route::post('/subscribe/{topic}',[subscribeController::class,'createSubscription']);
 
-Route::post('/publish/{topic}',[publishController::class,'publish']);
+// Route::post('/publish/{topic}',[publishController::class,'publish']);

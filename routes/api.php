@@ -20,6 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::post('/subscribe/{topic}',[subscribeController::class,'createSubscription']);
+Route::post('/subscribe/{topic}',[subscribeController::class,'createSubscription']);
 
-// Route::post('/publish/{topic}',[publishController::class,'publish']);
+Route::post('/publish/{topic}',[publishController::class,'publish']);
