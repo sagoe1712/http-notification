@@ -18,16 +18,18 @@ class Post extends Model
      *
      * @var string[]
      */
+    public $primaryKey ='id';
+    
     protected $fillable = [
         'subscriber_id',
         'topic_id',
         'payload',
     ];
 
-    public function topic()
-    {
-        return $this->belongsTo(Topic::class);
-    }
+    // public function topic()
+    // {
+    //     return $this->belongsTo(Topic::class);
+    // }
 
 
     public function subscriber()

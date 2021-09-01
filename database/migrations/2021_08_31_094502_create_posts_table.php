@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('subscriber_id')->nullable();
             $table->foreign('subscriber_id')->references('id')->on('subscribers');
+            $table->string('subscriber_endpoint')->nullable();
             $table->unsignedBigInteger('topic_id');
             $table->foreign('topic_id')->references('id')->on('topics');
             $table->string('payload');

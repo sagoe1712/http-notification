@@ -19,6 +19,7 @@ class CreateSubscriptionsTable extends Migration
             $table->foreign('subscriber_id')->references('id')->on('subscribers');
             $table->unsignedBigInteger('topic_id');
             $table->foreign('topic_id')->references('id')->on('topics');
+            $table->tinyInteger('notified')->default('0');
             $table->timestamps();
         });
     }

@@ -20,12 +20,6 @@ class subscribeController extends Controller
         return $count;
 
     }
-   
-    private function store_topic($name){
-        $topic = new Topic;
-        $topic->topics = $name;
-        return $topic->save();
-    }
 
     private function store_subscriber($name){
         $subscriber = new Subscriber;

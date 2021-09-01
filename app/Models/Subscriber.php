@@ -18,18 +18,19 @@ class Subscriber extends Model
      *
      * @var string[]
      */
+    public $primaryKey ='id';
     protected $fillable = [
         'url',
     ];
 
     public function subscription()
     {
-        return $this->hasMany(Subscription::class);
+        return $this->hasOne(Subscription::class);
     }
 
     public function post()
     {
-        return $this->hasMany(Post::class);
+        return $this->hasOne(Post::class);
     }
 
 }

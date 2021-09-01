@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\publishController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\subscribeController;
@@ -19,6 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/subscribe/{topic}',[subscribeController::class,'createSubscription']);
+// Route::post('/subscribe/{topic}',[subscribeController::class,'createSubscription']);
 
-Route::post('/publish/{topic}',[subscribeController::class,'publish']);
+// Route::post('/publish/{topic}',[publishController::class,'publish']);

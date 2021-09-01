@@ -18,6 +18,9 @@ class Subscription extends Model
      *
      * @var string[]
      */
+
+    public $primaryKey ='id';
+    
     protected $fillable = [
         'subscriber_id',
         'topic_id',
