@@ -97,7 +97,7 @@ private function store_post($subscriber_id = null, $subscriber_endpoint = null, 
                 {
                     $str = [];
                     $str = ['data'=>$request->all(), 'topic'=>$topic];
-                    echo json_encode($str);
+                    // echo json_encode($str);
                 }
 
             }
